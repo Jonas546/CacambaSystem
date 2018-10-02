@@ -62,8 +62,23 @@ $(document).ready(function(){
 						string += "<tr>";
 						string += "<td>"+numb+"</td>";
 						string += "<td>"+st+"</td>";
-						string += "<td colspan='2'><button class='btn btn-primary mb-2' id='ed' data-toggle='modal' data-target='#modal_edit' onclick='cbmodal("+numb+", "+ids+");'>Editar</button>";
-						string += "&nbsp;&nbsp;<button class='btn btn-danger mb-2' id='ex' data-toggle='modal' data-target='#modal_del' onclick='cbmodal1("+ids+");'>Excluir</button></td>";
+						string += "<td colspan='2'>";
+						string += "<div id='cb_normal'>";
+						string += "<button class='btn btn-primary mb-2' id='ed' data-toggle='modal' data-target='#modal_edit' onclick='cbmodal("+numb+", "+ids+");'>Editar</button>&nbsp;&nbsp";
+						string += "<button class='btn btn-danger mb-2' id='ex' data-toggle='modal' data-target='#modal_del' onclick='cbmodal1("+ids+");'>Excluir</button>";
+						string += "</div>";
+						string += "<div id='cb_cel'>";
+						string += "<div class='dropdown'>";
+						string += "<button class='btn btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>Opção";
+						string += "<span class='caret'></span></button>";
+						string += "<ul class='dropdown-menu'>";
+						string += "<li><a href='#' data-toggle='modal' data-target='#modal_edit' onclick='cbmodal("+numb+", "+ids+");'>&nbsp;&nbsp;Editar</a></li>";
+						string += "<li><a href='#' data-toggle='modal' data-target='#modal_del' onclick='cbmodal("+numb+", "+ids+");'>&nbsp;&nbsp;Excluir</a></li>";
+						string += "</ul>";
+						string += "</div>";
+						string += "</div>";
+						string += "</td>";
+						string += "</tr>";
 						string += "</table>";
 
 						$('#cb_table').html(string);
