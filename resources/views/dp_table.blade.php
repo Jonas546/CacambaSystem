@@ -1,15 +1,34 @@
+<style>
+@media screen and (max-width: 605px){
+	
+	#dp_cel{
+		display:none;
+	}
+	
+	#dp_cel{
+		display:none;
+	}
+	
+	#dp_data{
+		font-size: 15px;
+	}
+	
+}
+
+</style>
+
 @include('links')
 
 @if(isset($table))
 <table class='table table-striped'>
 	<tr>
 		<td>Id</td>
-		<td>Descrição</td>
-		<td>Tipo</td>
-		<td>Data</td>
-		<td>Qtde</td>
+		<td id='dp_cel'>Descrição</td>
+		<td id='dp_cel'>Tipo</td>
+		<td id='dp_cel'>Data</td>
+		<td id='dp_cel'>Qtde</td>
 		<td>Valor</td>
-		<td>Responsável</td>
+		<td id='dp_cel'>Responsável</td>
 		<td>Opção</td>
 	</tr>
 
@@ -17,12 +36,12 @@
 
 	<tr>
 		<td>{{$t->id}}</td>
-		<td>{{$t->nome}}</td>
-		<td>{{$t->descricao}}</td>
-		<td><?php echo date('d/m/y', strtotime($t->data)); ?></td>
-		<td>{{$t->qtde}}</td>
+		<td id='dp_cel'>{{$t->nome}}</td>
+		<td id='dp_cel'>{{$t->descricao}}</td>
+		<td id='dp_cel'><?php echo date('d/m/y', strtotime($t->data)); ?></td>
+		<td id='dp_cel'>{{$t->qtde}}</td>
 		<td>R$ <?php echo number_format($t->valor, 2, ',',''); ?></td>
-		<td>{{$t->func}}</td>
+		<td id='dp_cel'>{{$t->func}}</td>
 		<td><a href='/del_gastos/{{$t->id}}' class='btn btn-danger mb-2' id='ex'>Excluir</a></td>
 	</tr>
 

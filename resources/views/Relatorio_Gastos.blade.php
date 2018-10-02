@@ -23,30 +23,36 @@ iframe {
 
 <h5>Período</h5>
 
-<form method="post" enctype="multipart/form-data" role="form" id="dpform" action="/get_gastos" target="dp_frame">
-  @csrf
-  <div class="row">
-    <div class="col">
-      <input type="text" id='data_inicio' name='data_inicio' class="form-control" readonly placeholder="Data Inicial">
-      <script>
-        $('#data_inicio').datepicker({
-          uiLibrary: 'bootstrap4'
-        });
-      </script>
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" readonly id='data_fim' name='data_fim' placeholder="Data Final">
-      <script>
-        $('#data_fim').datepicker({
-          uiLibrary: 'bootstrap4'
-        });
-      </script>
-    </div>
-    <div class="col">
-      <button class="btn btn-primary mb-2" type="submit" id="brsearch">Buscar</button>
-    </div>
+	<div class="row">
+	
+	<form method="post" enctype="multipart/form-data" role="form" id="dpform" action="/get_gastos" target="dp_frame">
+		@csrf
+  
+		<div class="col">
+			<input type="text" id='data_inicio' name='data_inicio' class="form-control" readonly placeholder="Data Inicial">
+			<script>
+				$('#data_inicio').datepicker({
+					uiLibrary: 'bootstrap4'
+				});
+			</script>
+		</div>
+		<br/>
+		<div class="col">
+			<input type="text" class="form-control" readonly id='data_fim' name='data_fim' placeholder="Data Final">
+			<script>
+				$('#data_fim').datepicker({
+				uiLibrary: 'bootstrap4'
+				});
+			</script>
+		</div>
+		<br/>
+		<div class="col">
+			<button class="btn btn-primary mb-2" type="submit" id="brsearch">Buscar</button>
+		</div>
+		
+	</form>	
+		
   </div>
-</form>
 
 </br>
 
