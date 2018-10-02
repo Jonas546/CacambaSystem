@@ -50,25 +50,40 @@ $(document).ready(function(){
 						$('#cb_table').empty();
 
 
-						var string = "<table class='table table-striped'>";
+						var string = "<table class='table table-striped' id='fc_data'>";
 						string += "<tr>";
 						string += "<td>Nome</td>";
 						string += "<td>Cargo</td>";
-						string += "<td>Cpf</td>";
-						string += "<td>Status</td>";
+						string += "<td class='fc_cel'>Cpf</td>";
+						string += "<td class='fc_cel'>Status</td>";
 						string += "<td>Opção</td>";
 						string += "</tr>";
 						string += "<tr>";
 						string += "<td>"+rs.nome+"</td>";
 						string += "<td>"+rs.cargo+"</td>";
-						string += "<td>"+rs.cpf+"</td>";
-						string += "<td>"+rs.status+"</td>";
-						string += "<td><button class='btn btn-info mb-2' id='em' data-toggle='modal' data-target='#modal_mais' onclick='fc_modal_mais("+rs.ids+");'>+ Mais</button>";
-						string += "&nbsp;&nbsp;<button class='btn btn-primary mb-2' id='ed' data-toggle='modal' data-target='#modal_edit' onclick='fc_modal_edit("+rs.ids+");'>Editar</button>";
-						string += "&nbsp;&nbsp;<button class='btn btn-danger mb-2' data-toggle='modal' data-target='#modal_del' id='ex' onclick='get("+rs.ids+");'>Desligar</button></td>";
+						string += "<td class='fc_cel'>"+rs.cpf+"</td>";
+						string += "<td class='fc_cel'>"+rs.status+"</td>";
+						string += "<td>";
+						string += "<div id='fc_normal'>";
+						string += "<button class='btn btn-info mb-2' id='em' data-toggle='modal' data-target='#modal_mais' onclick='fc_modal_mais("+rs.ids+");'>+ Mais</button>&nbsp";
+						string += "<button class='btn btn-primary mb-2' id='ed' data-toggle='modal' data-target='#modal_edit' onclick='fc_modal_edit("+rs.ids+");'>Editar</button>&nbsp";
+						string += "<button class='btn btn-danger mb-2' data-toggle='modal' data-target='#modal_del' id='ex' onclick='get("+rs.ids+");'>Desligar</button>";
+						string += "</div>";
+						string += "<div id='fc_small'>";
+						string += "<div class='dropdown'>";
+						string += "<button class='btn btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>Opção";
+						string += "<span class='caret'></span></button>";
+						string += "<ul class='dropdown-menu'>";
+						string += "<li><a href='#' data-toggle='modal' data-target='#modal_mais' onclick='fc_modal_mais("+rs.ids+");'>&nbsp;&nbsp;+ Mais</a></li>";
+						string += "<li><a href='#' data-toggle='modal' data-target='#modal_edit' onclick='fc_modal_edit("+rs.ids+");'>&nbsp;&nbsp;Editar</a></li>";
+						string += "<li><a href='#' data-toggle='modal' data-target='#modal_del' id='ex' onclick='get("+rs.ids+");'>&nbsp;&nbsp;Desligar</a></li>";
+						string += "</ul>";
+						string += "</div>";
+						string += "</div>";
+						string += "</td>";
 						string += "</tr>";
 						string += "</table>";
-
+					
 						$('#cb_table').html(string);
 
 					}
